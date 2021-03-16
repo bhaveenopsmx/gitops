@@ -1,2 +1,0 @@
-overrideBaseUrl: redis://:password@testops-redis-master:6379
-skipLifeCycleManagement: true
