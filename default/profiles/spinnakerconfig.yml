@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    include: git
+  cloud:
+    config:
+      server:
+        git:
+          ## Below DYNAMIC_ACCOUNTS_REPO, GIT_USER, GIT_TOKEN are fed via
+          ## opsmx-gitops-secret.yaml file in oes helm chart
+          uri: DYNAMIC_ACCOUNTS_REPO
+          username: GIT_USER
+          password: GIT_TOKEN
+          basedir: /tmp/config-repo
+          refresh-rate: 10
+encrypt:
+  key: Q7udUkHPuA3VnNlOtksSgQ
