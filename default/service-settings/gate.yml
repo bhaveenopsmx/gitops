@@ -1,0 +1,4 @@
+artifactId: docker.io/devopsmx/ubi8-oes-gate:1.16.1
+healthEndpoint: /health
+kubernetes:
+  useExecHealthCheck: false
