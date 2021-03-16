@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hal-deploy-apply
+spec:
+  backoffLimit: 10
+  template:
+    spec:
+      containers:
+        - args:
+            - >-
+              export DAEMON_ENDPOINT=http://<NAMESPACE>-spinnaker-halyard:8064 && export
+              HAL_COMMAND="hal --daemon-endpoint $DAEMON_ENDPOINT" &&  until
+              $HAL_COMMAND --ready; do sleep 10 ; done && $HAL_COMMAND deploy
+              apply
+          command:
+            - bash
+            - '-x'
+            - '-c'
+          image: 'docker.io/devopsmx/ubi8-oes-operator-halyard:1.20.5'
+          name: deploy-apply
+      restartPolicy: Never
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      serviceAccount: <NAMESPACE>-spinnaker-halyard
+      serviceAccountName: <NAMESPACE>-spinnaker-halyard
