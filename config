@@ -303,11 +303,11 @@ deploymentConfigurations:
     apiSecurity:
       ssl:
         enabled: false
-      overrideBaseUrl: http://OVERRIDE_API_URL
+      overrideBaseUrl: https://spin-gate.gitops.opsmx.com
     uiSecurity:
       ssl:
         enabled: false
-      overrideBaseUrl: http://OVERRIDE_DECK_URL
+      overrideBaseUrl: https://spin.gitops.opsmx.com
     authn:
       oauth2:
         enabled: false
