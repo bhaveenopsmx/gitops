@@ -1,16 +1,12 @@
 spring:
   profiles:
-    include: git
+    include: "git"
   cloud:
     config:
       server:
         git:
-          ## Below DYNAMIC_ACCOUNTS_REPO, GIT_USER, GIT_TOKEN are fed via
-          ## opsmx-gitops-secret.yaml file in oes helm chart
-          uri: DYNAMIC_ACCOUNTS_REPO
-          username: GIT_USER
-          password: GIT_TOKEN
-          basedir: /tmp/config-repo
-          refresh-rate: 10
+          uri: "https://github.com/bhaveenopsmx/gitops-accounts.git"
+          username: "bhaveenlatest"
+          password: "6dbb03939c6eec6458874055b994503af14a8836"
 encrypt:
-  key: Q7udUkHPuA3VnNlOtksSgQ
+  key: "Q7udUkHPuA3VnNlOtksSgQ"
