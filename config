@@ -113,7 +113,7 @@ deploymentConfigurations:
       enabled: false
     vault:
       enabled: false
-    location: SPINNAKER_NAMESPACE
+    location: spinops
     customSizing:
       spin-front50:
         limits:
